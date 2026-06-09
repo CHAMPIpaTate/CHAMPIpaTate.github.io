@@ -93,10 +93,14 @@
       <div>
         <div class="comp-section-title">Traces &amp; preuves</div>
         <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📐</span><span>Schéma électrique complet de la nouvelle carte régie réalisé sur KiCad (microcontrôleur, MAX232, régulateurs, pont redresseur, connecteurs)</span></div>
-          <div class="trace-item"><span class="trace-icon">🗂️</span><span>Tableau comparatif des composants d'origine vs composants retenus avec justifications techniques (compatibilité MCC, disponibilité, robustesse)</span></div>
-          <div class="trace-item"><span class="trace-icon">🖥️</span><span>Fichiers PCB KiCad : routage double face, plans de masse sur les deux faces, composants traversants sur les pièces à remplacer en maintenance</span></div>
-          <div class="trace-item"><span class="trace-icon">🔢</span><span>Note de dimensionnement du transistor de pilotage de la LED autofocus (Ib=3,8 mA, β=100, Ic=15 mA → saturation vérifiée)</span></div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">📐</span><span>Schéma électrique complet de la nouvelle carte régie réalisé sur KiCad (microcontrôleur, MAX232, régulateurs, pont redresseur, connecteurs)</span></div>
+            <img src="trace/schemas_kicad-ciz60.png" alt="schemas_kicad-ciz60">
+          </div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">🖥️</span><span>Fichiers PCB KiCad : routage double face, plans de masse sur les deux faces, composants traversants sur les pièces à remplacer en maintenance</span></div>
+            <img src="trace/cao_kicad_ciz60.png" alt="cao_kicad_ciz60">
+          </div>
         </div>
       </div>
     </div>
@@ -132,10 +136,14 @@
       <div>
         <div class="comp-section-title">Traces &amp; preuves</div>
         <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📊</span><span>Tableau de mesures des tensions (V1 : Valim=18,7 Vac, V5=5,04 V, V10=10,16 V) avec calcul des erreurs et analyse des écarts par rapport aux valeurs théoriques</span></div>
-          <div class="trace-item"><span class="trace-icon">📡</span><span>Relevés oscilloscope des trames UART (ex. bouton Focus Near : trames VISCA 81 01 04 38 03 FF et 81 01 04 08 03 FF) permettant de valider chaque commande avant connexion caméra</span></div>
-          <div class="trace-item"><span class="trace-icon">📋</span><span>Tableau de vérification des 6 commandes boutons sur la régie d'origine (zoom tele, zoom wide, focus near/far/auto) avec réponse hexadécimale capturée et action caméra observée</span></div>
-          <div class="trace-item"><span class="trace-icon">📷</span><span>Photos comparatives de la LED autofocus (état ON / état OFF) documentant la validation visuelle du retour d'état caméra</span></div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">📡</span><span>Relevés oscilloscope des trames UART (ex. bouton Focus Near : trames VISCA 81 01 04 38 03 FF et 81 01 04 08 03 FF) permettant de valider chaque commande avant connexion caméra</span></div>
+            <img src="trace/trace_UART.png" alt="trace_UART">
+          </div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">📷</span><span>Photos comparatives de la LED autofocus (état ON / état OFF) documentant la validation visuelle du retour d'état caméra</span></div>
+            <img src="trace/photo_led_onoff.png" alt="photo_led_onoff">
+          </div>
         </div>
       </div>
     </div>
@@ -171,10 +179,14 @@
       <div>
         <div class="comp-section-title">Traces &amp; preuves</div>
         <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📄</span><span>Document Word de compte-rendu technique remis à Tunzini MN : composants utilisés, tensions mesurées, organigrammes du programme, conclusions de l'étude</span></div>
-          <div class="trace-item"><span class="trace-icon">🔌</span><span>Choix de composants traversants pour les pièces critiques (µC, MAX232, régulateurs, fusible) et CMS pour les autres, documenté dans le schéma KiCad avec justification maintenance</span></div>
-          <div class="trace-item"><span class="trace-icon">📁</span><span>Fichiers de fabrication PCB (Gerber, nomenclature) livrés à l'entreprise permettant la commande de nouvelles cartes si avarie non réparable</span></div>
-          <div class="trace-item"><span class="trace-icon">💾</span><span>Code source complet du microcontrôleur versionné et remis à Tunzini MN pour permettre la reprogrammation ou l'ajout de fonctionnalités futures</span></div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">🔌</span><span>tableau des alimentations des différents composants</span></div>
+            <img src="trace/tableau_alimentations.png" alt="tableau alimentation">
+          </div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">💾</span><span>logigrame de la fonction d'interuption du timer2</span></div>
+            <img src="trace/logigrame.png" alt="logigrame">
+          </div>
         </div>
       </div>
     </div>
@@ -210,10 +222,14 @@
       <div>
         <div class="comp-section-title">Traces &amp; preuves</div>
         <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">🔧</span><span>Photo du câblage de la régie avec la nouvelle carte implantée (connecteurs Phoenix Contact J3–J5, porte-fusible, bornier J8 avec cavaliers RS232/TTL)</span></div>
-          <div class="trace-item"><span class="trace-icon">📋</span><span>Tableau de correspondance des connecteurs (J1 à J12) documentant chaque lien entre la carte et les éléments physiques de la régie</span></div>
-          <div class="trace-item"><span class="trace-icon">🎥</span><span>Test de mise en service caméra WONWOO : identification du besoin TTL, câblage via carte FPC-embase, tableau de connexion (Vidéo out, GND, Vcc, RX/TX UART) et validation du retour vidéo</span></div>
-          <div class="trace-item"><span class="trace-icon">✅</span><span>Rapport de mise en service final : compatibilité WONWOO validée (TTL), incompatibilité Tamron documentée avec hypothèses pour un essai futur</span></div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">🔧</span><span>Photo du câblage de la régie avec la nouvelle carte implantée (connecteurs Phoenix Contact J3–J5, porte-fusible, bornier J8 avec cavaliers RS232/TTL)</span></div>
+            <img src="trace/photo_cablage.png" alt="photo_cablage">
+          </div>
+          <div class="trace-item">
+            <div class="trace-item-header"><span class="trace-icon">📋</span><span>Tableau de correspondance des connecteurs (J1 à J12) documentant chaque lien entre la carte et les éléments physiques de la régie</span></div>
+            <img src="trace/tableau_connections.png" alt="tableau_alimentations">
+          </div>
         </div>
       </div>
     </div>
