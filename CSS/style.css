@@ -334,9 +334,7 @@
   /* Body */
   .comp-body {
     padding: 2rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: block;
   }
 
   @media (max-width: 760px) {
