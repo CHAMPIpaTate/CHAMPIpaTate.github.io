@@ -90,15 +90,6 @@
           Pour y répondre, j'ai d'abord étudié la régie existante (analyse des tensions, des trames UART, du protocole VISCA), puis sélectionné de nouveaux composants en justifiant chaque choix (microcontrôleur PIC 16F18877 compatible MCC, pont redresseur de remplacement W10G, conservation des régulateurs L7805/L7810 encore produits), conçu le schéma électrique sur KiCad et réalisé le routage PCB en tenant compte des contraintes du milieu nucléaire (plans de masse, composants traversants pour les éléments critiques).
         </p>
       </div>
-      <div>
-        <div class="comp-section-title">Traces &amp; preuves</div>
-        <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📐</span><span>Schéma électrique complet de la nouvelle carte régie réalisé sur KiCad (microcontrôleur, MAX232, régulateurs, pont redresseur, connecteurs)</span></div>
-          <div class="trace-item"><span class="trace-icon">🗂️</span><span>Tableau comparatif des composants d'origine vs composants retenus avec justifications techniques (compatibilité MCC, disponibilité, robustesse)</span></div>
-          <div class="trace-item"><span class="trace-icon">🖥️</span><span>Fichiers PCB KiCad : routage double face, plans de masse sur les deux faces, composants traversants sur les pièces à remplacer en maintenance</span></div>
-          <div class="trace-item"><span class="trace-icon">🔢</span><span>Note de dimensionnement du transistor de pilotage de la LED autofocus (Ib=3,8 mA, β=100, Ic=15 mA → saturation vérifiée)</span></div>
-        </div>
-      </div>
     </div>
 
     <div class="bilan-box">
@@ -128,15 +119,6 @@
         <p class="comp-text">
           La procédure s'est déroulée en plusieurs étapes structurées : (1) inspection visuelle des soudures et test de continuité au multimètre pour détecter les courts-circuits ; (2) première mise sous tension avec mesure des tensions sur tous les nœuds critiques et comparaison aux valeurs théoriques ; (3) vérification des trames UART en sortie du microcontrôleur à l'oscilloscope avant connexion caméra ; (4) test fonctionnel complet en condition réelle (retour vidéo, réaction caméra sur chaque bouton, état LED autofocus). Les essais sur caméras WONWOO et Tamron ont permis d'établir la compatibilité ou l'incompatibilité de chaque modèle avec la régie.
         </p>
-      </div>
-      <div>
-        <div class="comp-section-title">Traces &amp; preuves</div>
-        <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📊</span><span>Tableau de mesures des tensions (V1 : Valim=18,7 Vac, V5=5,04 V, V10=10,16 V) avec calcul des erreurs et analyse des écarts par rapport aux valeurs théoriques</span></div>
-          <div class="trace-item"><span class="trace-icon">📡</span><span>Relevés oscilloscope des trames UART (ex. bouton Focus Near : trames VISCA 81 01 04 38 03 FF et 81 01 04 08 03 FF) permettant de valider chaque commande avant connexion caméra</span></div>
-          <div class="trace-item"><span class="trace-icon">📋</span><span>Tableau de vérification des 6 commandes boutons sur la régie d'origine (zoom tele, zoom wide, focus near/far/auto) avec réponse hexadécimale capturée et action caméra observée</span></div>
-          <div class="trace-item"><span class="trace-icon">📷</span><span>Photos comparatives de la LED autofocus (état ON / état OFF) documentant la validation visuelle du retour d'état caméra</span></div>
-        </div>
       </div>
     </div>
 
@@ -168,15 +150,6 @@
           J'ai conçu la nouvelle carte en facilitant délibérément sa maintenabilité : les composants susceptibles d'être remplacés (microcontrôleur, MAX232, régulateurs linéaires, fusible) ont été montés en traversant pour permettre une désolidarisation facile. L'ajout d'un porte-fusible et d'un connecteur de reprogrammation (J9/PICkit) permet une intervention rapide sans dessoudage. J'ai également rédigé un document de compte-rendu complet contenant le schéma électrique, les tensions mesurées et les organigrammes du programme, pour que tout technicien de Tunzini MN puisse intervenir sur le lot.
         </p>
       </div>
-      <div>
-        <div class="comp-section-title">Traces &amp; preuves</div>
-        <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">📄</span><span>Document Word de compte-rendu technique remis à Tunzini MN : composants utilisés, tensions mesurées, organigrammes du programme, conclusions de l'étude</span></div>
-          <div class="trace-item"><span class="trace-icon">🔌</span><span>Choix de composants traversants pour les pièces critiques (µC, MAX232, régulateurs, fusible) et CMS pour les autres, documenté dans le schéma KiCad avec justification maintenance</span></div>
-          <div class="trace-item"><span class="trace-icon">📁</span><span>Fichiers de fabrication PCB (Gerber, nomenclature) livrés à l'entreprise permettant la commande de nouvelles cartes si avarie non réparable</span></div>
-          <div class="trace-item"><span class="trace-icon">💾</span><span>Code source complet du microcontrôleur versionné et remis à Tunzini MN pour permettre la reprogrammation ou l'ajout de fonctionnalités futures</span></div>
-        </div>
-      </div>
     </div>
 
     <div class="bilan-box">
@@ -206,15 +179,6 @@
         <p class="comp-text">
           J'ai suivi une procédure structurée : soudure et inspection des composants, câblage des connecteurs Phoenix Contact vers les éléments de la régie, configuration du cavalier J8 pour le choix du format de données (RS232 ou TTL selon la caméra connectée), flashage du microcontrôleur via PICkit, puis mise en service avec test de chaque caméra compatible. La mise en service des caméras WONWOO a nécessité d'identifier le besoin de basculer en mode TTL — ce diagnostic a été formalisé dans le document de compte-rendu pour les prochains utilisateurs.
         </p>
-      </div>
-      <div>
-        <div class="comp-section-title">Traces &amp; preuves</div>
-        <div class="traces-list">
-          <div class="trace-item"><span class="trace-icon">🔧</span><span>Photo du câblage de la régie avec la nouvelle carte implantée (connecteurs Phoenix Contact J3–J5, porte-fusible, bornier J8 avec cavaliers RS232/TTL)</span></div>
-          <div class="trace-item"><span class="trace-icon">📋</span><span>Tableau de correspondance des connecteurs (J1 à J12) documentant chaque lien entre la carte et les éléments physiques de la régie</span></div>
-          <div class="trace-item"><span class="trace-icon">🎥</span><span>Test de mise en service caméra WONWOO : identification du besoin TTL, câblage via carte FPC-embase, tableau de connexion (Vidéo out, GND, Vcc, RX/TX UART) et validation du retour vidéo</span></div>
-          <div class="trace-item"><span class="trace-icon">✅</span><span>Rapport de mise en service final : compatibilité WONWOO validée (TTL), incompatibilité Tamron documentée avec hypothèses pour un essai futur</span></div>
-        </div>
       </div>
     </div>
 
